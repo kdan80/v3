@@ -1,7 +1,11 @@
 import React from 'react'
 import GlobalStyle from '../styles/GlobalStyle'
 
-const Layout = ({children}) => {
+interface IProps {
+    children: React.ReactNode
+}
+
+const Layout: React.FC<IProps> = ({children}) => {
   return (
     <>
         <GlobalStyle />
