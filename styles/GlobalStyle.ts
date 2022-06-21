@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import variables from "./variables";
 
 const GlobalStyle = createGlobalStyle`
-    //${fonts};
+    
     ${variables};
 
     * {
