@@ -1,0 +1,9 @@
+.cache
+./cache
+/build
+*.log
+node_modules
+/public
+/public/
+*.env
+*cache
