@@ -15,7 +15,7 @@ const Home: NextPage<Props> = ({viewportHeight}) => {
   return (
     <Layout location={pathname} viewportHeight={viewportHeight} >
       <About viewportHeight={viewportHeight} />
-      <Landing />
+      <Landing viewportHeight={viewportHeight} />
     </Layout>
   )
 }

@@ -40,11 +40,7 @@ const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
             <div className='background'/>
 
             <MainContent>
-              {
-                  children && children.map(child => (
-                      React.cloneElement(child, {viewportHeight: viewportHeight})
-                  ))
-              }
+              {children}
             </MainContent>
             
         </App>

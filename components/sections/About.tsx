@@ -99,7 +99,7 @@ const About: React.FC<Props> = ({viewportHeight}) => {
                 <motion.ul 
                     className='skills-list'
                     {...scrollFade}>
-                    {skills && skills.map((skill: string, index: number) => <motion.li key={index}>{skill}</motion.li>)}
+                    {skills && skills.map((skill, index) => <motion.li key={index}>{skill}</motion.li>)}
                 </motion.ul>
 
             </motion.div>
