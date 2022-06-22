@@ -18,7 +18,8 @@
     "paths": {
       "@components": ["components/index"],
       "@styles/*": ["styles/*"],
-      "@sections": ["components/sections/index"]
+      "@sections": ["components/sections/index"],
+      "@fonts/*": ["fonts/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
