@@ -1,16 +1,15 @@
 import React from 'react'
-import GlobalStyle from '../styles/GlobalStyle'
+import GlobalStyle from '@styles/GlobalStyle'
 
-interface IProps {
-    children: React.ReactNode
+interface Props {
+    children?: React.ReactNode
 }
 
-const Layout: React.FC<IProps> = ({children}) => {
+const Layout: React.FC<Props> = ({children}) => {
   return (
     <>
         <GlobalStyle />
         <div>
-            layout
             {children}
         </div>
     </>
