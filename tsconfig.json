@@ -18,6 +18,7 @@
     "paths": {
       "@components": ["components/index"],
       "@styles/*": ["styles/*"],
+      "@mixins": ["styles/mixins"],
       "@sections": ["components/sections/index"],
       "@fonts/*": ["fonts/*"]
     }
