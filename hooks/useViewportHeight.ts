@@ -1,8 +1,8 @@
 import React from "react";
 
-const useViewportHeight = (height: number): number => {
+const useViewportHeight = () => {
 
-    const [viewportHeight, setViewportHeight] = React.useState<number>(height);
+    const [viewportHeight, setViewportHeight] = React.useState<number>();
 
     React.useEffect(() => {
         setViewportHeight(window.innerHeight);

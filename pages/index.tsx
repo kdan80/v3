@@ -4,14 +4,17 @@ import  { About, Landing } from '@sections'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
-const Home: NextPage = () => {
+interface Props {
+  viewportHeight: number
+}
+
+const Home: NextPage<Props> = ({viewportHeight}) => {
 
   const { pathname } = useRouter();
 
   return (
-    <Layout location={pathname}>
-      Hello world
-      <About />
+    <Layout location={pathname} viewportHeight={viewportHeight} >
+      <About viewportHeight={viewportHeight} />
       <Landing />
     </Layout>
   )

@@ -28,10 +28,11 @@ const MainContent = styled.main`
 
 interface Props {
     location?: string,
-    children?: React.ReactNode | React.ReactElement[]
+    viewportHeight: number,
+    children?: React.ReactElement[]
 }
 
-const Layout: React.FC<Props> = ({location, children}) => {
+const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
   return (
     <>
         <GlobalStyle />
@@ -39,7 +40,11 @@ const Layout: React.FC<Props> = ({location, children}) => {
             <div className='background'/>
 
             <MainContent>
-              {children}
+              {
+                  children && children.map(child => (
+                      React.cloneElement(child, {viewportHeight: viewportHeight})
+                  ))
+              }
             </MainContent>
             
         </App>
