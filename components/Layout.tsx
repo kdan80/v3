@@ -14,7 +14,7 @@ const App = styled.div`
         top: 0;
         left: 0;
         z-index: -1;
-        background: url("/background.webp");
+        background: url("images/background.webp");
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -36,7 +36,12 @@ const Layout: React.FC<Props> = ({location, children}) => {
     <>
         <GlobalStyle />
         <App id='root' className='root'>
-            {children}
+            <div className='background'/>
+
+            <MainContent>
+              {children}
+            </MainContent>
+            
         </App>
     </>
   )
