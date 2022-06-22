@@ -20,7 +20,8 @@
       "@styles/*": ["styles/*"],
       "@mixins": ["styles/mixins"],
       "@sections": ["components/sections/index"],
-      "@fonts/*": ["fonts/*"]
+      "@fonts/*": ["fonts/*"],
+      "@hooks": ["hooks/index"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
