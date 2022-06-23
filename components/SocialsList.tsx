@@ -6,7 +6,7 @@ import { socialLinksContainerVariants,
     socialLinksItemVariants } from '@styles/transitions';
 
 type SocialListProps = {
-    scrolledToTop: boolean
+    $scrolledToTop: boolean
 }
 
 const StlyedSocialList = styled(motion.div)<SocialListProps>`
@@ -22,8 +22,8 @@ const StlyedSocialList = styled(motion.div)<SocialListProps>`
     
     // Firefox mobile has a dynamic url bar on scroll and as such translatingY by 100% does not necessarily hide an elment
     // An additional 60px is required, alternatively 200% works
-    ${({scrolledToTop}) => 
-            !scrolledToTop && 
+    ${({$scrolledToTop}) => 
+            !$scrolledToTop && 
             css`
                 transform: translateY(calc(100% + 60px));
     `}
@@ -47,7 +47,7 @@ const SocialsList: React.FC<Props> = ({scrolledToTop}) => {
 
     return (
         <StlyedSocialList
-            scrolledToTop={scrolledToTop}
+            $scrolledToTop={scrolledToTop}
             variants={socialLinksContainerVariants}
             initial='initial'
             animate='animate'>

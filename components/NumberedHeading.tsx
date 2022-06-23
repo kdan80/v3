@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { scrollFade } from '@styles/transitions';
 
 type HeadingProps = {
-    overline?: boolean
+    $overline?: boolean
 }
 
 const StyledHeading = styled(motion.div)<HeadingProps>`
@@ -31,7 +31,7 @@ const StyledHeading = styled(motion.div)<HeadingProps>`
             font-weight: 400;
         }
 
-        ${({overline}) => overline && css`
+        ${({$overline}) => $overline && css`
             color: var(--fg-highlight);
             font-family: var(--font-mono);
             font-size: var(--ft-md);
@@ -40,7 +40,7 @@ const StyledHeading = styled(motion.div)<HeadingProps>`
     }
 
     span {
-        ${({overline}) => overline && css`
+        ${({$overline}) => $overline && css`
             display: none;        
         `};
         height: 1px;
@@ -65,10 +65,10 @@ const StyledHeading = styled(motion.div)<HeadingProps>`
 
         h2 {
             gap: .8rem;
-            font-size: ${props => props.overline ? 'var(--ft-lg)' : '1.8rem'};
+            font-size: ${props => props.$overline ? 'var(--ft-lg)' : '1.8rem'};
 
             &:before {
-                font-size: ${props => props.overline ? 'var(--ft-md)' : '1.2rem'};
+                font-size: ${props => props.$overline ? 'var(--ft-md)' : '1.2rem'};
             }
         }
     }
@@ -82,7 +82,7 @@ interface Props {
 const NumberedHeading: React.FC<Props> = ({overline, children}) => {
 
     return (
-        <StyledHeading overline={overline} {...scrollFade}>
+        <StyledHeading $overline={overline} {...scrollFade}>
             <h2>
                 {children}
             </h2>
