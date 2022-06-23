@@ -2,6 +2,8 @@ import React from 'react'
 import GlobalStyle from '@styles/GlobalStyle'
 import styled from 'styled-components';
 import mixins from '@mixins';
+import { useScrolledToTop, useScrollDirection } from '@hooks';
+import { Section } from '@sections';
 
 const App = styled.div`
     ${mixins.flexCenter};
@@ -33,15 +35,42 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
+
+  const scrollDirection = useScrollDirection();
+  const scrolledToTop = useScrolledToTop();
+  const isHome: boolean = location === "/";
+  const is404: boolean = location === "404";
+  const [isLoading, setIsLoading] = React.useState<boolean>(isHome);
+
     return (
         <>
             <GlobalStyle />
             <App id='root' className='root'>
                 <div className='background'/>
-
-                <MainContent>
-                  {children}
-                </MainContent>
+                {
+                    isLoading && isHome
+                        && false
+                        ?   <Loader
+                                finishLoading={() => setIsLoading(false)}
+                                viewportHeight={viewportHeight} />
+                        :   is404
+                                ?   <MainContent>
+                                        <Section viewportHeight={viewportHeight}>
+                                            {children}
+                                        </Section>
+                                    </MainContent>
+                                :
+                                    <>
+                                        {/* <Header
+                                            scrollDirection={scrollDirection}
+                                            scrolledToTop={scrolledToTop}/> */}
+                                        <MainContent>
+                                            {children}                                            
+                                            {/* <Footer /> */}
+                                        </MainContent>
+                                        {/* <SocialsList scrolledToTop={scrolledToTop} /> */}
+                                    </>
+                }
                 
             </App>
         </>

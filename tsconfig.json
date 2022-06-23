@@ -22,7 +22,8 @@
       "@sections": ["components/sections/index"],
       "@fonts/*": ["fonts/*"],
       "@hooks": ["hooks/index"],
-      "@config": ["config/config"]
+      "@config": ["config/config"],
+      "@icons": ["components/icons/index"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
