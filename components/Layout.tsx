@@ -33,19 +33,19 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
-  return (
-    <>
-        <GlobalStyle />
-        <App id='root' className='root'>
-            <div className='background'/>
+    return (
+        <>
+            <GlobalStyle />
+            <App id='root' className='root'>
+                <div className='background'/>
 
-            <MainContent>
-              {children}
-            </MainContent>
-            
-        </App>
-    </>
-  )
+                <MainContent>
+                  {children}
+                </MainContent>
+                
+            </App>
+        </>
+    )
 }
 
 export default Layout
