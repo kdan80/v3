@@ -7,7 +7,11 @@ import { motion, useAnimation } from 'framer-motion';
 import {    landingPageContainerVariants,
             landingPageItemVariants } from '@styles/transitions';
 
-const StyledSection = styled(Section)`
+type SectionProps = {
+    id: string
+}
+
+const StyledSection = styled(Section)<SectionProps>`
     font-weight: normal;
     transition: all 1000ms ease-in-out;
 

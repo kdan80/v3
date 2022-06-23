@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import mixins from '@mixins';
 import { useScrolledToTop, useScrollDirection } from '@hooks';
 import { Section } from '@sections';
-import { Footer, Loader, SocialsList } from '@components'
+import { Footer, Header, Loader, SocialsList } from '@components'
 
 const App = styled.div`
     ${mixins.flexCenter};
@@ -62,9 +62,9 @@ const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
                                     </MainContent>
                                 :
                                     <>
-                                        {/* <Header
+                                        <Header
                                             scrollDirection={scrollDirection}
-                                            scrolledToTop={scrolledToTop}/> */}
+                                            scrolledToTop={scrolledToTop}/>
                                         <MainContent>
                                             {children}                                            
                                             <Footer />
