@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import mixins from '@mixins';
 import { useScrolledToTop, useScrollDirection } from '@hooks';
 import { Section } from '@sections';
+import { Loader } from '@components'
 
 const App = styled.div`
     ${mixins.flexCenter};
@@ -16,7 +17,7 @@ const App = styled.div`
         top: 0;
         left: 0;
         z-index: -1;
-        background: url("images/background.webp");
+        background: url('images/background.webp');
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -38,8 +39,8 @@ const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
 
   const scrollDirection = useScrollDirection();
   const scrolledToTop = useScrolledToTop();
-  const isHome: boolean = location === "/";
-  const is404: boolean = location === "404";
+  const isHome: boolean = location === '/';
+  const is404: boolean = location === '404';
   const [isLoading, setIsLoading] = React.useState<boolean>(isHome);
 
     return (
@@ -49,7 +50,7 @@ const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
                 <div className='background'/>
                 {
                     isLoading && isHome
-                        && false
+                        //&& false
                         ?   <Loader
                                 finishLoading={() => setIsLoading(false)}
                                 viewportHeight={viewportHeight} />
