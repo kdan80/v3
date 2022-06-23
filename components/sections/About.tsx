@@ -5,7 +5,7 @@ import mixins from '@mixins';
 import config from '@config';
 import { motion } from 'framer-motion';
 import { scrollFade } from '@styles/transitions';
-//import { NumberedHeading } from '@components';
+import { NumberedHeading } from '@components';
 
 type SectionProps = {
     id: string
@@ -75,9 +75,9 @@ const About: React.FC<Props> = ({viewportHeight}) => {
             <motion.div
                 className='container'>
 
-                {/* <NumberedHeading>
+                <NumberedHeading>
                     About Me
-                </NumberedHeading> */}
+                </NumberedHeading>
 
                 <motion.p {...scrollFade}>
                     Hello! My name is Kieran and I enjoy creating things that live on the internet. My
