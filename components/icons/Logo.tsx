@@ -86,10 +86,10 @@ const Logo: React.FC<Props> = ({finishLoading}) => {
         const leftBracketTimeline = anime.timeline({
             targets: '.left',
             begin: () => {
-                console.time();
+                //console.time();
             },
             complete: () => {
-                console.timeEnd();
+                //console.timeEnd();
                 finishLoading();
             }
         });
