@@ -39,9 +39,9 @@ const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
 
   const scrollDirection = useScrollDirection();
   const scrolledToTop = useScrolledToTop();
-  const isHome: boolean = location === '/';
-  const is404: boolean = location === '404';
-  const [isLoading, setIsLoading] = React.useState<boolean>(isHome);
+  const isHome = location === '/';
+  const is404 = location === '404';
+  const [isLoading, setIsLoading] = React.useState(isHome);
 
     return (
         <>

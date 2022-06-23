@@ -32,12 +32,12 @@ const StyledLoader = styled.div`
     }
 `;
 
-interface IProps {
+interface Props {
     finishLoading: () => void,
     viewportHeight: number
 }
 
-const Loader: React.FC<IProps> = ({finishLoading, viewportHeight}) => {
+const Loader: React.FC<Props> = ({finishLoading, viewportHeight}) => {
 
     React.useEffect(() => {
         window.addEventListener('keydown', finishLoading);
