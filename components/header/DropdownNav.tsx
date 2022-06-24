@@ -4,7 +4,7 @@ import mixins from '@mixins';
 import Link from 'next/link';
 
 type NavProps = {
-    $dropdownIsOpen: boolean
+    dropdownIsOpen: boolean
 }
 
 const StyledNav = styled.nav<NavProps>`
@@ -52,7 +52,7 @@ const StyledNav = styled.nav<NavProps>`
         }
     }
 
-    ${({$dropdownIsOpen}) => $dropdownIsOpen && css`
+    ${({dropdownIsOpen}) => dropdownIsOpen && css`
         transform: translateY(0);
 
         ol {
@@ -67,6 +67,9 @@ const StyledNav = styled.nav<NavProps>`
         }
     `}
 
+    @media screen and (min-width: 768px){
+        display: none;
+    }
 `;
 
 type NavLink = {
@@ -82,15 +85,15 @@ interface Props {
 
 const DropdownNav: React.FC<Props> = ({navLinks, dropdownIsOpen, setDropdownIsOpen}) => {
 
-    // innerWidth should be >= to --bp-sm which is set in src/styles/_variables.js
-    const onResize = (e: UIEvent) => {
-        if(!e.currentTarget) return;
-        if (window.innerWidth >= 768) {
-            setDropdownIsOpen(false);
-        }
-    };
-
     React.useEffect(() => {
+        // innerWidth should be >= to --bp-sm which is set in src/styles/variables.js
+        const onResize = (e: UIEvent) => {
+            if(!e.currentTarget) return;
+            if (window.innerWidth >= 768) {
+                setDropdownIsOpen(false);
+            }
+        };
+
         window.addEventListener('resize', onResize);
 
         dropdownIsOpen 
@@ -103,7 +106,7 @@ const DropdownNav: React.FC<Props> = ({navLinks, dropdownIsOpen, setDropdownIsOp
     }, [dropdownIsOpen])
 
     return (  
-        <StyledNav $dropdownIsOpen={dropdownIsOpen}>
+        <StyledNav dropdownIsOpen={dropdownIsOpen}>
             <ol>
                 {
                     navLinks.map(({name, url}, index) => (
