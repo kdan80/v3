@@ -5,7 +5,6 @@ import Nav from './Nav';
 import DropdownNav from './DropdownNav';
 import Hamburger from './Hamburger';
 import mixins from '@mixins';
-import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { homeLinkVariants } from '@styles/transitions';

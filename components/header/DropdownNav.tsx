@@ -4,7 +4,8 @@ import mixins from '@mixins';
 import Link from 'next/link';
 
 type NavProps = {
-    dropdownIsOpen: boolean
+    dropdownIsOpen: boolean,
+    $componentIsMounted: boolean
 }
 
 const StyledNav = styled.nav<NavProps>`
@@ -17,7 +18,11 @@ const StyledNav = styled.nav<NavProps>`
     height: 100vh;
     background-color: var(--dropmenu-fill);
     transform: translateY(-100%);
-    transition: transform 300ms ease-in-out;
+    //transition: transform 300ms ease-in-out;
+
+    ${({$componentIsMounted}) => $componentIsMounted && css`
+        transition: transform 300ms ease-in-out;
+    `}
 
     @supports (backdrop-filter: blur()){
         background-color: var(--dropmenu-fill-alpha);
@@ -85,7 +90,12 @@ interface Props {
 
 const DropdownNav: React.FC<Props> = ({navLinks, dropdownIsOpen, setDropdownIsOpen}) => {
 
+    // For some reason the DropDown animation is triggering as soon as the page loads
+    // I have added this flag to disable this animation until after the component has loaded 
+    const [componentIsMounted, setComponentIsMounted] = React.useState(false)
+
     React.useEffect(() => {
+        setComponentIsMounted(true);
         // innerWidth should be >= to --bp-sm which is set in src/styles/variables.js
         const onResize = (e: UIEvent) => {
             if(!e.currentTarget) return;
@@ -106,7 +116,8 @@ const DropdownNav: React.FC<Props> = ({navLinks, dropdownIsOpen, setDropdownIsOp
     }, [dropdownIsOpen])
 
     return (  
-        <StyledNav dropdownIsOpen={dropdownIsOpen}>
+        
+        <StyledNav dropdownIsOpen={dropdownIsOpen} $componentIsMounted={componentIsMounted}>
             <ol>
                 {
                     navLinks.map(({name, url}, index) => (
