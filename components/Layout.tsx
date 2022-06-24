@@ -37,11 +37,17 @@ interface Props {
 
 const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
 
-  const scrollDirection = useScrollDirection();
-  const scrolledToTop = useScrolledToTop();
-  const isHome = location === '/';
-  const is404 = location === '404';
-  const [isLoading, setIsLoading] = React.useState(isHome);
+    const [layoutIsMounted, setLayoutIsMounted] = React.useState(false);
+
+    const scrollDirection = useScrollDirection();
+    const scrolledToTop = useScrolledToTop();
+    const isHome = location === '/';
+    const is404 = location === '404';
+    const [isLoading, setIsLoading] = React.useState(isHome);
+
+    React.useEffect(() => {
+        setLayoutIsMounted(true);
+    }, [])
 
     return (
         <>
@@ -49,8 +55,8 @@ const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
             <App id='root' className='root'>
                 <div className='background'/>
                 {
-                    isLoading && isHome
-                        && false
+                    isLoading && isHome && layoutIsMounted
+                        //&& false
                         ?   <Loader
                                 finishLoading={() => setIsLoading(false)}
                                 viewportHeight={viewportHeight} />
@@ -72,7 +78,6 @@ const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
                                         <SocialsList scrolledToTop={scrolledToTop} />
                                     </>
                 }
-                
             </App>
         </>
     )

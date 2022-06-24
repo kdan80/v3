@@ -22,7 +22,7 @@ const StyledSvg = styled.svg`
 `;
 
 interface Props {
-    finishLoading: () => void
+    finishLoading: () => void,
 }
 
 const Logo: React.FC<Props> = ({finishLoading}) => {
@@ -194,8 +194,7 @@ const Logo: React.FC<Props> = ({finishLoading}) => {
         <StyledSvg
             viewBox='0 0 380 40'
             xmlns='http://www.w3.org/2000/svg'
-            className='svg'
-            >
+            className='svg'>
   
             <g id='layer1'>
 

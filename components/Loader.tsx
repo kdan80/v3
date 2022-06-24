@@ -56,7 +56,7 @@ const Loader: React.FC<Props> = ({finishLoading, viewportHeight}) => {
                 transition={{delay: 2.6, duration: .4}}
                 className='cancel-animation'>
             </motion.span>
-            <Logo finishLoading={finishLoading} />
+            <Logo finishLoading={finishLoading}/>
         </StyledLoader>
     );
 };
