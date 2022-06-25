@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 import { useViewportHeight } from '@hooks'
 
-function MyApp({ Component, pageProps }: AppProps) {
+const  MyApp = ({ Component, pageProps }: AppProps) => {
 
   const viewportHeight = useViewportHeight();
 
