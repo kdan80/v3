@@ -23,7 +23,8 @@
       "@fonts/*": ["fonts/*"],
       "@hooks": ["hooks/index"],
       "@config": ["config/config"],
-      "@icons": ["components/icons/index"]
+      "@icons": ["components/icons/index"],
+      "@featured/*": ["content/featured/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
