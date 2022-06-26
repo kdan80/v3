@@ -1,11 +1,9 @@
 import type { NextPage } from 'next'
 import { Layout } from '@components'
-import  { About, Contact, Landing } from '@sections'
+import  { About, Contact, Featured, Landing } from '@sections'
 import { useRouter } from 'next/router'
 import fs from 'fs'
 import matter from 'gray-matter'
-import Image from 'next/image'
-import Link from 'next/link'
 
 interface Props {
   viewportHeight: number
@@ -20,6 +18,7 @@ const Home: NextPage<Props> = ({viewportHeight, projects}) => {
         <Layout location={pathname} viewportHeight={viewportHeight} >
             <Landing viewportHeight={viewportHeight} />
             <About viewportHeight={viewportHeight} />
+            <Featured viewportHeight={viewportHeight} projects={projects} />
             <Contact viewportHeight={viewportHeight} />
         </Layout>
     )
@@ -33,17 +32,18 @@ export async function getStaticProps(){
 
     const projects = files.map((file) => {
         const readFile = fs.readFileSync(`content/featured/${file}/index.md`, 'utf-8');
-        const { data: frontmatter } = matter(readFile);
+        const { data: frontmatter, content } = matter(readFile);
         return {
             frontmatter,
+            content
         };
     });
 
-    console.log("projects: ", projects);
+    //console.log("projects: ", projects);
     
     return{
         props: {
-          files,
+          projects,
         }
     }
 }

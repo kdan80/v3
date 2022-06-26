@@ -1,7 +1,7 @@
 ---
 date: '3'
 title: 'Vidstream'
-cover: './vidstream.webp'
+cover: '/featured/vidstream.webp'
 github: 'https://github.com/kdan80/vidstream'
 external: 'https://github.com/kdan80/vidstream'
 tech:

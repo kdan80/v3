@@ -1,7 +1,7 @@
 ---
 date: '4'
 title: 'kierandansey.co.uk'
-cover: './kierandansey.webp'
+cover: '/featured/kierandansey.webp'
 github: 'https://github.com/kdan80/v1'
 external: 'https://www.kierandansey.co.uk'
 tech:

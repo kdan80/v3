@@ -56,7 +56,7 @@ const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
                 <div className='background'/>
                 {
                     isLoading && isHome && layoutIsMounted
-                        //&& false
+                        && false
                         ?   <Loader
                                 finishLoading={() => setIsLoading(false)}
                                 viewportHeight={viewportHeight} />

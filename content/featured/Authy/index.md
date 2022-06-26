@@ -1,7 +1,7 @@
 ---
 date: '1'
 title: 'authy'
-cover: './authy.webp'
+cover: '/featured/authy.webp'
 github: 'https://github.com/kdan80/authy'
 external: 'https://github.com/kdan80/authy'
 tech:

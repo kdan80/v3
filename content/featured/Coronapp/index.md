@@ -1,7 +1,7 @@
 ---
 date: '2'
 title: 'Corona App'
-cover: './coronapp.webp'
+cover: '/featured/coronapp.webp'
 github: 'https://github.com/kdan80/coronapp'
 external: 'https://github.com/kdan80/coronapp'
 tech:
