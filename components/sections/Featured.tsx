@@ -1,12 +1,12 @@
-import React from "react";
-import Section from "./Section";
-import styled from "styled-components";
-import mixins from "@mixins";
-import Image from "next/image";
-import { Github, External } from "@icons";
-import { motion } from "framer-motion";
-import { NumberedHeading } from "@components";
-import { scrollFade20 } from "@styles/transitions";
+import React from 'react';
+import Section from './Section';
+import styled from 'styled-components';
+import mixins from '@mixins';
+import Image from 'next/image';
+import { Github, External } from '@icons';
+import { motion } from 'framer-motion';
+import { NumberedHeading } from '@components';
+import { scrollFade20 } from '@styles/transitions';
 
 type SectionProps = {
     id: string
@@ -354,12 +354,12 @@ const Featured: React.FC<IProps> = ({viewportHeight, projects}) => {
 
     return (
         <StyledSection
-            id="projects"
+            id='projects'
             viewportHeight={viewportHeight}>
-            <motion.div className="container">
+            <motion.div className='container'>
 
                 <NumberedHeading>
-                    Some Things I've Built
+                    Some Things I&apos;ve Built
                 </NumberedHeading>
 
                 <ProjectList>
@@ -367,42 +367,41 @@ const Featured: React.FC<IProps> = ({viewportHeight, projects}) => {
                         projects.map((project, index) => {
                             const { frontmatter, content } = project;
                             const { external, title, tech, github, cover } = frontmatter;
-                            //const image = getImage(cover);
 
                             return(
                                 <Project key={index} {...scrollFade20}>
-                                    <div className="project-content">
+                                    <div className='project-content'>
                                         <div>
 
-                                            <p className="project-overline">
+                                            <p className='project-overline'>
                                                 Featured Project
                                             </p>
 
-                                            <h3 className="project-title">
+                                            <h3 className='project-title'>
                                                 <a href={external}>{title}</a>
                                             </h3>
 
                                             <div
-                                                className="project-description"
+                                                className='project-description'
                                                 dangerouslySetInnerHTML={{ __html: content }}
                                             />
 
                                             {tech.length && (
-                                                <ul className="project-tech-list">
+                                                <ul className='project-tech-list'>
                                                     {tech.map((tech, index) => (
                                                         <li key={index}>{tech}</li>
                                                     ))}
                                                 </ul>
                                             )}
 
-                                            <div className="project-links">
+                                            <div className='project-links'>
                                                 {github && (
-                                                    <a href={github} aria-label="GitHub Link" target="_blank">
+                                                    <a href={github} aria-label='GitHub Link' rel='noreferrer' target='_blank'>
                                                         <Github />
                                                     </a>
                                                 )}
                                                 {external && (
-                                                    <a href={external} aria-label="External Link" target="_blank">
+                                                    <a href={external} aria-label='External Link' rel='noreferrer' target='_blank'>
                                                         <External />
                                                     </a>
                                                 )}
@@ -411,9 +410,9 @@ const Featured: React.FC<IProps> = ({viewportHeight, projects}) => {
                                         </div>
                                     </div>
 
-                                    <div className="project-image">
-                                        <a href={external ? external : github ? github : '#'} target="_blank">
-                                            <Image layout="responsive" objectFit="cover" width={3} height={2}  src={cover} placeholder="blur" blurDataURL={cover} alt={title} className="img" />
+                                    <div className='project-image'>
+                                        <a href={external ? external : github ? github : '#'} rel='noreferrer' target='_blank'>
+                                            <Image layout='responsive' objectFit='cover' width={3} height={2}  src={cover} placeholder='blur' blurDataURL={cover} alt={title} className='img' />
                                         </a>
                                     </div>
                                 </Project>
