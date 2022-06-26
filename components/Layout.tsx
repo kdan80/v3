@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import mixins from '@mixins';
 import { useScrolledToTop, useScrollDirection } from '@hooks';
 import { Section } from '@sections';
-import { Footer, Header, Loader, SocialsList } from '@components'
+import { DocumentHead, Footer, Header, Loader, SocialsList } from '@components'
 
 const App = styled.div`
     ${mixins.flexCenter};
@@ -51,6 +51,7 @@ const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
 
     return (
         <>
+            <DocumentHead />
             <GlobalStyle />
             <App id='root' className='root'>
                 <div className='background'/>

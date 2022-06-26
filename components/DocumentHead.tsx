@@ -5,9 +5,9 @@ import Head from 'next/head';
 import config from '@config';
 
 interface Props {
-    title: string,
-    description: string,
-    image: string
+    title?: string,
+    description?: string,
+    image?: string
 }
 
 const DocumentHead: React.FC<Props> = ({ title, description, image }) => {
