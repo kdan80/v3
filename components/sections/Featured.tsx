@@ -342,15 +342,15 @@ type project = {
         external: string,
         tech: string[]
     },
-    content: any
+    content: string
 }
 
-interface IProps {
+interface Props {
     viewportHeight: number,
     projects: project[]
 }
 
-const Featured: React.FC<IProps> = ({viewportHeight, projects}) => {
+const Featured: React.FC<Props> = ({viewportHeight, projects}) => {
 
     return (
         <StyledSection

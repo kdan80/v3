@@ -5,9 +5,21 @@ import { useRouter } from 'next/router'
 import fs from 'fs'
 import matter from 'gray-matter'
 
+type project = {
+    frontmatter: {
+      date: string,
+      title: string,
+      cover: string,
+      github: string,
+      external: string,
+      tech: string[]
+    },
+    content: string
+}
+
 interface Props {
   viewportHeight: number
-  projects: any
+  projects: project[]
 }
 
 const Home: NextPage<Props> = ({viewportHeight, projects}) => {
@@ -39,8 +51,6 @@ export async function getStaticProps(){
         };
     });
 
-    //console.log("projects: ", projects);
-    
     return{
         props: {
           projects,
