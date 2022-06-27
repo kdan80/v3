@@ -1,6 +1,6 @@
 {
-  "name": "kierandansey.co.uk",
-  "short_name": "kierandansey.co.uk",
+  "name": "Kieran Dansey freelance web developer",
+  "short_name": "kierandansey",
   "description": "Kieran Dansey freelance web developer",
   "icons": [
     {
@@ -39,7 +39,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://kierandansey.co.uk",
   "display": "minimal-ui",
   "background_color": "#26272a",
   "theme_color": "#151618",
