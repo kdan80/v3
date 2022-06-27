@@ -4,17 +4,37 @@
   "description": "Kieran Dansey freelance web developer",
   "icons": [
     {
-      "src": "/images/favicon.ico",
-      "sizes": "16x16",
-      "type": "image/x-icon"
+      "src": "/images/favicons/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "16x16"
     },
     {
-      "src": "/images/logo192.png",
+      "src": "/images/favicons/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/images/favicons/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/images/favicons/logo.png",
+      "type": "image/png",
+      "sizes": "100x100"
+    },
+    {
+      "src": "/images/favicons/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/images/favicons/android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/images/logo512.png",
+      "src": "/images/favicons/android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
