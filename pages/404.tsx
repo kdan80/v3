@@ -46,7 +46,7 @@ const NotFoundPage: NextPage = () => {
     return (
         <Layout location="404">
             <Container>
-                <DocumentHead title='Page Not Found' />
+                {/* <DocumentHead title='Page Not Found' /> */}
                 <h1 className='title'>404</h1>
                 <h2 className='subtitle'>Page Not Found!</h2>
                 <Link href='/'>Return Home</Link>

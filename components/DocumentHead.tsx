@@ -31,7 +31,7 @@ const DocumentHead: React.FC<Props> = ({ title, description, image }) => {
 
     return (
         <Head>
-            <html lang='en' />
+            {/* <html lang='en' /> */}
             <title>{siteMetadata.title}</title>
             <link rel='icon' href='/images/favicons/favicon.ico' />
             <link rel='apple-touch-icon' sizes='180x180' href='/images/favicons/apple-touch-icon.png' />
