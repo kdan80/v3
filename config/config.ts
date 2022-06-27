@@ -10,8 +10,7 @@ interface Config {
         title: string,
         description: string,
         siteUrl: string,
-        image: string,
-        favicon: string
+        image: string
     },
     navLinks: NavLink[]
 };
@@ -38,8 +37,7 @@ const config: Config = {
         title: 'Kieran Dansey',
         description: 'Kieran Dansey freelance web developer',
         siteUrl: 'https://kierandansey.co.uk', 
-        image: '/og.webp' ,
-        favicon: '/images/favicons/favicon.ico'
+        image: '/images/og.webp' ,
     },
 
     navLinks: [

@@ -19,8 +19,7 @@ const DocumentHead: React.FC<Props> = ({ title, description, image }) => {
       title: defaultTitle,
       description: defaultDescription,
       siteUrl,
-      image: defaultImage,
-      favicon
+      image: defaultImage
     } = siteData;
 
     const siteMetadata = {
@@ -34,7 +33,11 @@ const DocumentHead: React.FC<Props> = ({ title, description, image }) => {
         <Head>
             <html lang='en' />
             <title>{siteMetadata.title}</title>
-            <link rel='icon' href={favicon} />
+            <link rel='icon' href='/images/favicons/favicon.ico' />
+            <link rel='apple-touch-icon' sizes='180x180' href='/images/favicons/apple-touch-icon.png' />
+            <link rel='icon' type='image/png' sizes='32x32' href='/images/favicons/favicon-32x32.png' />
+            <link rel='icon' type='image/png' sizes='16x16' href='/images/favicons/favicon-16x16.png' />
+            <link rel='manifest' href='/manifest.json' />
 
             <meta name='description' content={siteMetadata.description} />
             <meta name='image' content={siteMetadata.image} />
