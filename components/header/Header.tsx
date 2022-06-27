@@ -25,7 +25,7 @@ const StyledHeader = styled(motion.header)<HeaderProps>`
     color: var(--fg-main);
     z-index: var(--layer-3); 
     height: var(--header-height);
-    transition: transform 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
 
     ${({$scrolledToTop, $scrollDirection}) => 
             !$scrolledToTop && 
