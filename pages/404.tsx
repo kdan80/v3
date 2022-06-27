@@ -41,12 +41,16 @@ const Container = styled.div<ContainerProps>`
     }
 `;
 
-const NotFoundPage: NextPage = () => {
+interface Props {
+    viewportHeight: number,
+}
+
+const NotFoundPage: NextPage<Props> = ({viewportHeight}) => {
 
     return (
-        <Layout location="404">
+        <Layout location="404" viewportHeight={viewportHeight}>
+            <DocumentHead title='Page Not Found' />
             <Container>
-                {/* <DocumentHead title='Page Not Found' /> */}
                 <h1 className='title'>404</h1>
                 <h2 className='subtitle'>Page Not Found!</h2>
                 <Link href='/'>Return Home</Link>
