@@ -2,8 +2,6 @@
 ./cache
 /build
 *.log
-/public
-/public/
 *cache
 
 # dependencies

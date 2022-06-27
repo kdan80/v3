@@ -1,0 +1,48 @@
+{
+  "name": "kierandansey.co.uk",
+  "short_name": "kierandansey.co.uk",
+  "description": "Kieran Dansey freelance web developer",
+  "icons": [
+    {
+      "src": "/images/favicon.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/images/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "minimal-ui",
+  "background_color": "#26272a",
+  "theme_color": "#151618",
+  "screenshots": [
+    {
+      "src": "/images/og.webp",
+      "type": "image/webp",
+      "sizes": "1200x630"
+    },
+    {
+      "src": "/images/og.png",
+      "type": "image/png",
+      "sizes": "1200x630"
+    },
+    {
+      "src": "/images/og@2x.webp",
+      "type": "image/webp",
+      "sizes": "2400x1260"
+    },
+    {
+      "src": "/images/og@2x.png",
+      "type": "image/png",
+      "sizes": "2400x1260"
+    }
+  ]
+}
