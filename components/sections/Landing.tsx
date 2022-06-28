@@ -80,8 +80,8 @@ const Landing: React.FC<Props> = ({viewportHeight}) => {
             margin: '0px 10px 0px 10px',
             amount: 1
         },
-        animate: pageLoadAnimationsComplete ? 'fadeOut' : false,
-        whileInView: pageLoadAnimationsComplete ? 'fadeIn' : false,
+        animate: pageLoadAnimationsComplete ? 'fadeOut' : undefined,
+        whileInView: pageLoadAnimationsComplete ? 'fadeIn' : undefined,
     }
 
     return (
@@ -94,16 +94,16 @@ const Landing: React.FC<Props> = ({viewportHeight}) => {
                     variants={landingPageContainerVariants}
                     initial='initial'
                     animate={animation}>
-                    <motion.h1 {...itemProps}>Hi, my name is</motion.h1>
-                    <motion.h2 {...itemProps}>Kieran Dansey.</motion.h2>
-                    <motion.h3 {...itemProps}>I build things for the web.</motion.h3>
-                    <motion.p {...itemProps}>
-                        I am a freelance web developer, and occasional designer, with a passion for building exceptional digital experiences.
-                    </motion.p>
-                    <motion.div
-                        {...itemProps}>
-                        <Link href='/#projects'>View My Projects</Link>
-                    </motion.div>
+                        <motion.h1 {...itemProps}>Hi, my name is</motion.h1>
+                        <motion.h2 {...itemProps}>Kieran Dansey.</motion.h2>
+                        <motion.h3 {...itemProps}>I build things for the web.</motion.h3>
+                        <motion.p {...itemProps}>
+                            I am a freelance web developer, and occasional designer, with a passion for building exceptional digital experiences.
+                        </motion.p>
+                        <motion.div
+                            {...itemProps}>
+                            <Link href='/#projects'>View My Projects</Link>
+                        </motion.div>
                 </motion.div>
         </StyledSection>
     );

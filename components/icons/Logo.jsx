@@ -21,11 +21,7 @@ const StyledSvg = styled.svg`
     }    
 `;
 
-interface Props {
-    finishLoading: () => void,
-}
-
-const Logo: React.FC<Props> = ({finishLoading}) => {
+const Logo = ({finishLoading}) => {
 
     // These values were obtained from measurements made in inkscape
     // They can be progmatically calculated using getBBox().x

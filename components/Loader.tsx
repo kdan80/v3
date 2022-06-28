@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import mixins from '@mixins';
 import { motion } from 'framer-motion';
-import { Logo } from '@icons';
+//import { Logo } from '@icons';
+import Logo from './icons/Logo'
 
 type LoaderProps = {
     style?: {
