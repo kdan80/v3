@@ -2,7 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import mixins from '@mixins';
 
-const StyledSection = styled.section`
+type SectionProps = {
+    style?: {
+        '--vh': number
+    }
+}
+
+const StyledSection = styled.section<SectionProps>`
     ${mixins.flexCenter};
     padding: var(--pd-win-sm);
     z-index: var(--layer-1);

@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 type NavProps = {
     dropdownIsOpen: boolean,
-    $componentIsMounted: boolean
+    $componentIsMounted: boolean,
 }
 
 const StyledNav = styled.nav<NavProps>`
@@ -57,8 +57,9 @@ const StyledNav = styled.nav<NavProps>`
         }
     }
 
-    ${({dropdownIsOpen}) => dropdownIsOpen && css`
+    ${(props) => props.dropdownIsOpen && css`
         transform: translateY(0);
+       
 
         ol {
 
@@ -66,8 +67,8 @@ const StyledNav = styled.nav<NavProps>`
                 opacity: 1;
                 margin-left: 0;
                 transition: 
-                    margin 250ms ease-in-out calc((var(--delay) * 75ms) + 200ms),
-                    opacity 250ms ease-in-out calc((var(--delay) * 75ms) + 200ms);
+                    margin 250ms ease-in-out calc((${props.key} * 75ms) + 200ms),
+                    opacity 250ms ease-in-out calc((${props.key} * 75ms) + 200ms);
             }
         }
     `}
@@ -135,3 +136,7 @@ const DropdownNav: React.FC<Props> = ({navLinks, dropdownIsOpen, setDropdownIsOp
 };
 
 export default DropdownNav;
+
+// transition: 
+//                     margin 250ms ease-in-out calc((var(--delay) * 75ms) + 200ms),
+//                     opacity 250ms ease-in-out calc((var(--delay) * 75ms) + 200ms);

@@ -4,9 +4,16 @@ import mixins from '@mixins';
 import { motion } from 'framer-motion';
 import { Logo } from '@icons';
 
-const StyledLoader = styled.div`
+type LoaderProps = {
+    style?: {
+        '--vh': number
+    }
+}
+
+const StyledLoader = styled.div<LoaderProps>`
     width: 100vw;
     min-height: calc(var(--vh) * 100px);
+    //min-height: calc((viewportHeight * 0.01) * 100px);
     ${mixins.flexCenter};
     justify-content: center;
 
