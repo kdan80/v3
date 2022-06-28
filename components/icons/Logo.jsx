@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import anime from 'animejs';
 
+// TODO: refactor in orded to work with typescript
+
 const StyledSvg = styled.svg`
     height: 5rem;
 
