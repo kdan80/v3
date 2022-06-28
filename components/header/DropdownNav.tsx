@@ -32,45 +32,10 @@ const StyledNav = styled.nav<NavProps>`
     ol {
         font-size: var(--ft-lg);
         ${mixins.flexCol};
-        
-        li {
-            transition: none;
-            opacity: 0;
-            margin-left: -25rem;
-            text-align: center;
-            font-size: var(--ft-lg);
-            counter-increment: item 1;
-            color: white;
-
-            a {
-                color: white;
-
-                &:before {
-                    content: '0' counter(item) '.';
-                    display: block;
-                    margin-right: 0;
-                    margin-bottom: .3125rem;
-                    font-size: var(--ft-sm);
-                    color: var(--fg-highlight);
-                }
-            }
-        }
     }
 
     ${(props) => props.dropdownIsOpen && css`
         transform: translateY(0);
-       
-
-        ol {
-
-            li {
-                opacity: 1;
-                margin-left: 0;
-                transition: 
-                    margin 250ms ease-in-out calc((${props.key} * 75ms) + 200ms),
-                    opacity 250ms ease-in-out calc((${props.key} * 75ms) + 200ms);
-            }
-        }
     `}
 
     @media screen and (min-width: 768px){
@@ -78,13 +43,50 @@ const StyledNav = styled.nav<NavProps>`
     }
 `;
 
-type NavLink = {
+type NavLinkProps = {
+    delay: number,
+    dropdownIsOpen: boolean
+}
+
+const NavLink = styled.li<NavLinkProps>`
+
+    transition: none;
+    opacity: 0;
+    margin-left: -25rem;
+    text-align: center;
+    font-size: var(--ft-lg);
+    counter-increment: item 1;
+    color: white;
+
+    a {
+        color: white;
+
+        &:before {
+            content: '0' counter(item) '.';
+            display: block;
+            margin-right: 0;
+            margin-bottom: .3125rem;
+            font-size: var(--ft-sm);
+            color: var(--fg-highlight);
+        }
+    }
+
+    ${(props) => props.dropdownIsOpen && css`
+        opacity: 1;
+        margin-left: 0;
+        transition: 
+            margin 250ms ease-in-out calc((${props.delay} * 75ms) + 200ms),
+            opacity 250ms ease-in-out calc((${props.delay} * 75ms) + 200ms);
+    `}   
+`;
+
+type NavLinks = {
     name: string,
     url: string
 }
 
 interface Props {
-    navLinks: NavLink[],
+    navLinks: NavLinks[],
     dropdownIsOpen: boolean,
     setDropdownIsOpen: (bool: boolean) => void
 }
@@ -122,12 +124,13 @@ const DropdownNav: React.FC<Props> = ({navLinks, dropdownIsOpen, setDropdownIsOp
             <ol>
                 {
                     navLinks.map(({name, url}, index) => (
-                        <li 
+                        <NavLink
                             key={index} 
-                            style={{'--delay': index}}
+                            dropdownIsOpen={dropdownIsOpen}
+                            delay={index}
                             onClick={() => setDropdownIsOpen(false)}>
                             <Link href={url}>{name}</Link>
-                        </li>
+                        </NavLink>
                     ))
                 }
             </ol>
@@ -136,7 +139,3 @@ const DropdownNav: React.FC<Props> = ({navLinks, dropdownIsOpen, setDropdownIsOp
 };
 
 export default DropdownNav;
-
-// transition: 
-//                     margin 250ms ease-in-out calc((var(--delay) * 75ms) + 200ms),
-//                     opacity 250ms ease-in-out calc((var(--delay) * 75ms) + 200ms);
