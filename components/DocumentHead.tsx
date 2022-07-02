@@ -52,6 +52,7 @@ const DocumentHead: React.FC<Props> = ({ title, description, image }) => {
             <meta name='twitter:title' content={siteMetadata.title} />
             <meta name='twitter:description' content={siteMetadata.description} />
             <meta name='twitter:image' content={siteMetadata.image} />
+            <meta name="google-site-verification" content="Imm8ge6Cd1Bc7A8yFSlcqy4yM-GTRj15qdkC01OMfaE" />
         </Head>
     );
 };
