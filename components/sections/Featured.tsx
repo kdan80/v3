@@ -412,7 +412,16 @@ const Featured: React.FC<Props> = ({viewportHeight, projects}) => {
 
                                     <div className='project-image'>
                                         <a href={external ? external : github ? github : '#'} rel='noreferrer' target='_blank'>
-                                            <Image layout='responsive' objectFit='cover' width={3} height={2}  src={cover} placeholder='blur' blurDataURL={cover} alt={title} className='img' />
+                                            <Image 
+                                                layout='responsive' 
+                                                objectFit='cover' 
+                                                width={2400} 
+                                                height={1600}  
+                                                src={cover} 
+                                                placeholder='blur' 
+                                                blurDataURL={cover} 
+                                                alt={title} 
+                                                className='img' />
                                         </a>
                                     </div>
                                 </Project>
