@@ -33,7 +33,7 @@ const StyledLoader = styled.div<LoaderProps>`
             content: 'Tap screen to skip intro';
 
             @media (hover: hover) and (pointer: fine){
-                content: 'Press any key to skip intro';
+                content: 'Press escape key to skip intro';
             }
         }
     }
