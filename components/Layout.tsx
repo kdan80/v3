@@ -37,17 +37,11 @@ interface Props {
 
 const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
 
-    const [layoutIsMounted, setLayoutIsMounted] = React.useState(false);
-
     const scrollDirection = useScrollDirection();
     const scrolledToTop = useScrolledToTop();
     const isHome = location === '/';
     const is404 = location === '404';
     const [isLoading, setIsLoading] = React.useState(isHome);
-
-    React.useEffect(() => {
-        setLayoutIsMounted(true);
-    }, [])
 
     return (
         <>
@@ -56,7 +50,7 @@ const Layout: React.FC<Props> = ({location, viewportHeight, children}) => {
             <App id='root' className='root'>
                 <div className='background'/>
                 {
-                    isLoading && isHome  && layoutIsMounted
+                    isLoading && isHome  
                         //&& false
                         ?   <Loader
                                 finishLoading={() => setIsLoading(false)}
