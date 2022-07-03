@@ -14,7 +14,6 @@ type LoaderProps = {
 const StyledLoader = styled.div<LoaderProps>`
     width: 100vw;
     min-height: calc(var(--vh) * 100px);
-    //min-height: calc((viewportHeight * 0.01) * 100px);
     ${mixins.flexCenter};
     justify-content: center;
 
