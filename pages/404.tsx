@@ -48,7 +48,7 @@ interface Props {
 const NotFoundPage: NextPage<Props> = ({viewportHeight}) => {
 
     return (
-        <Layout location="404" viewportHeight={viewportHeight}>
+        <Layout location='404' viewportHeight={viewportHeight}>
             <DocumentHead title='Page Not Found' />
             <Container>
                 <h1 className='title'>404</h1>

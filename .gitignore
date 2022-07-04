@@ -22,6 +22,11 @@
 **/public/workbox-*.js.map
 **/public/worker-*.js.map
 
+# dev
+/workbench
+/workbench/
+/workbench/*
+
 # production
 /build
 
