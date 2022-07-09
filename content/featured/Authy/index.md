@@ -3,7 +3,7 @@ date: '1'
 title: 'authy'
 cover: '/featured/authy.webp'
 github: 'https://github.com/kdan80/authy'
-external: 'https://github.com/kdan80/authy'
+external: 'https://authy-kdan80.herokuapp.com/'
 tech:
   - Express
   - MongoDB
