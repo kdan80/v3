@@ -45,11 +45,15 @@ export async function getStaticProps(){
     const projects = files.map((file) => {
         const readFile = fs.readFileSync(`content/featured/${file}/index.md`, 'utf-8');
         const { data: frontmatter, content } = matter(readFile);
+        const { date } = frontmatter;
         return {
             frontmatter,
-            content
+            content,
+            date: parseInt(date)
         };
     });
+
+    projects.sort((a: any, b: any) => a.date - b.date)
 
     return{
         props: {
