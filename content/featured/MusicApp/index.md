@@ -1,7 +1,7 @@
 ---
 date: '1'
 title: 'MusicApp'
-cover: '/featured/musicapp.webp'
+cover: '/featured/MusicApp/musicapp.webp'
 github: 'https://github.com/kdan80/musicapp-webclient'
 external: 'https://kdan80-musicapp.herokuapp.com'
 tech:
