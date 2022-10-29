@@ -1,5 +1,5 @@
 ---
-date: '2'
+date: '3'
 title: 'Corona App'
 cover: '/featured/coronapp.webp'
 github: 'https://github.com/kdan80/coronapp'

@@ -1,5 +1,5 @@
 ---
-date: '3'
+date: '4'
 title: 'Vidstream'
 cover: '/featured/vidstream.webp'
 github: 'https://github.com/kdan80/vidstream'
