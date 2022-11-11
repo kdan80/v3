@@ -1,5 +1,5 @@
 ---
-date: '5'
+date: '4'
 title: 'kierandansey.co.uk'
 cover: '/featured/kierandansey.webp'
 github: 'https://github.com/kdan80/v1'
